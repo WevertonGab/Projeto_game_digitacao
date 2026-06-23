@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -31,12 +32,18 @@
     <script src="game.js"></script>
 </body>
 =======
+=======
+<?php
+require_once __DIR__ . "/verifica_login.php";
+?>
+
+>>>>>>> ff445e6 (V1.1)
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>jogo</title>
     <link rel="stylesheet" href="stylegame.css">
 </head>
 <body>

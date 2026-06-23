@@ -39,6 +39,7 @@ require_once __DIR__ . "/verifica_login.php";
 
 <div id="opcoes">
     <a href="logout.php">Sair</a>
+    <a href="jogo.php">Jogar</a>
 </div>
 
 </body>
