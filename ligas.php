@@ -38,6 +38,15 @@ $stmtm_semanal = mysqli_prepare($conn, $sql_rank_semanal);
 mysqli_stmt_execute($stmtm_semanal);
 $rank_semanal = mysqli_stmt_get_result($stmtm_semanal);
 
+$sql_lista_ligas = "SELECT l.id, l.nome, l.criado_em, u.nickname AS criador
+FROM ligas l
+JOIN usuario u ON u.id = l.criador_id
+ORDER BY l.criado_em DESC";
+$stmt_lista = mysqli_prepare($conn, $sql_lista_ligas);
+mysqli_stmt_execute($stmt_lista);
+$lista_ligas = mysqli_stmt_get_result($stmt_lista);
+
+
 $filtro = $_GET['filtro'] ?? 'global';
 $rank_exibir = ($filtro === 'semanal') ? $rank_semanal : $rank_global;
 ?>
@@ -52,7 +61,6 @@ $rank_exibir = ($filtro === 'semanal') ? $rank_semanal : $rank_global;
 <body>
 
 <a href="dashboard.php">Voltar</a>
-<a href="criar_liga.php">Criar Liga</a>
 
 <section id="rank_global">
     <h2>Rank Global</h2>
@@ -83,7 +91,31 @@ $rank_exibir = ($filtro === 'semanal') ? $rank_semanal : $rank_global;
 
 <section id="liga_privada"> 
 <?php
-if ($liga_id ===null){}
+if ($liga_id === null){
+    echo "<a href='criar_liga.php'>Criar Liga</a>";
+    
+    echo "<table>";
+        echo "<thead>";
+            echo "<tr>";
+                echo "<th>Nome da Liga</th>";
+                echo "<th>Criador</th>";
+                echo "<th>Data de Criação</th>";
+                echo "<th>Ação</th>";
+            echo "</tr>";
+        echo "</thead>";
+    
+        echo "<tbody>";
+            while ($linha = mysqli_fetch_assoc($lista_ligas)) {
+                echo "<tr>";
+                echo "<td>" . $linha['nome'] . "</td>";
+                echo "<td>" . $linha['criador'] . "</td>";
+                echo "<td>" . $linha['criado_em'] . "</td>";
+                echo "<td><a href='entrar_liga.php?liga_id=" . $linha['id'] . "'>Entrar</a></td>";
+                echo "</tr>";
+            }   
+        echo "</tbody>";
+    echo "</table>";
+}
 ?> 
 </section>
 
