@@ -198,9 +198,25 @@ function quebrabloco(){
                 if (contador >= 50) {
                     clearInterval(intervalTimer);
                     const resultado = calcularPontuacao();
-                    alert(`Mina concluída!\nPontos: ${resultado.pontos}\nWPM: ${resultado.wpm}\nPrecisão: ${resultado.precisao}%`);
+                    const dados = {
+                        pontos: resultado.pontos,
+                        wpm: resultado.wpm,
+                        precisao: resultado.precisao
+                    };
+                    fetch("salvar_partida.php", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(dados)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.sucesso) {
+                            alert(`Mina concluída!\nPontos: ${resultado.pontos}\nWPM: ${resultado.wpm}\nPrecisão: ${resultado.precisao}%`);
+                        }
                     animando = false;
                     return;
+                    });
+                    
                 }
                 areablocos.classList.remove("animating");
                 void areablocos.offsetWidth;
@@ -218,5 +234,6 @@ function quebrabloco(){
         });
     }
 }
+
 criarmina();
 mostramina();
