@@ -46,9 +46,59 @@ $stmt_lista = mysqli_prepare($conn, $sql_lista_ligas);
 mysqli_stmt_execute($stmt_lista);
 $lista_ligas = mysqli_stmt_get_result($stmt_lista);
 
+$liga_dados = null;
+$rank_exibir_ligas = [];
+
+if($liga_id !== null) {
+$sql_liga_dados = "SELECT l.nome, l.criado_em, u.nickname AS criador
+FROM ligas l
+JOIN usuario u ON u.id = l.criador_id
+WHERE l.id = ?";
+    
+    $stmt_liga_dados = mysqli_prepare($conn, $sql_liga_dados);
+    mysqli_stmt_bind_param($stmt_liga_dados, "i", $liga_id);
+    mysqli_stmt_execute($stmt_liga_dados);
+    $result_liga_dados = mysqli_stmt_get_result($stmt_liga_dados);
+    $liga_dados = mysqli_fetch_assoc($result_liga_dados);
+
+$rank_liga_geral = [];
+$sql_liga_geral = "SELECT u.nickname, SUM(p.pontos) AS total_pontos
+FROM usuario u
+JOIN partida p ON p.usuario_id = u.id
+JOIN liga_membro lm ON lm.usuario_id = u.id
+WHERE lm.liga_id = ?
+GROUP BY u.id
+ORDER BY total_pontos DESC";
+
+    $stmt_liga_geral = mysqli_prepare($conn, $sql_liga_geral);
+    mysqli_stmt_bind_param($stmt_liga_geral, "i", $liga_id);
+    mysqli_stmt_execute($stmt_liga_geral);
+    $rank_liga_geral = mysqli_stmt_get_result($stmt_liga_geral);
+
+$rank_liga_semanal = [];
+$sql_liga_semanal = "SELECT u.nickname, SUM(p.pontos) AS total_pontos
+FROM usuario u
+JOIN partida p ON p.usuario_id = u.id
+JOIN liga_membro lm ON lm.usuario_id = u.id
+WHERE lm.liga_id = ?
+AND YEARWEEK(p.criado_em, 1) = YEARWEEK(NOW(), 1)
+GROUP BY u.id
+ORDER BY total_pontos DESC";
+
+    $stmt_liga_semanal = mysqli_prepare($conn, $sql_liga_semanal);
+    mysqli_stmt_bind_param($stmt_liga_semanal, "i", $liga_id);
+    mysqli_stmt_execute($stmt_liga_semanal);
+    $rank_liga_semanal = mysqli_stmt_get_result($stmt_liga_semanal);
+
+$filtro_liga = $_GET['filtro_liga'] ?? 'geral';
+$rank_exibir_ligas   = ($filtro_liga === 'semanal') ? $rank_liga_semanal : $rank_liga_geral;
+}
+
 
 $filtro = $_GET['filtro'] ?? 'global';
 $rank_exibir = ($filtro === 'semanal') ? $rank_semanal : $rank_global;
+
+
 ?>
 
 <!DOCTYPE html>
@@ -111,6 +161,35 @@ if ($liga_id === null){
                 echo "<td>" . $linha['criador'] . "</td>";
                 echo "<td>" . $linha['criado_em'] . "</td>";
                 echo "<td><a href='entrar_liga.php?liga_id=" . $linha['id'] . "'>Entrar</a></td>";
+                echo "</tr>";
+            }   
+        echo "</tbody>";
+    echo "</table>";
+}
+else {
+    echo "<h2>Nome da Liga: " . $liga_dados['nome'] . "</h2>";
+    echo "<h3>Criador: " . $liga_dados['criador'] . "</h3>";
+    echo "<h3>Data de Criação: " . $liga_dados['criado_em'] . "</h3>";
+    echo "<a href='sair_liga.php'>Sair da Liga</a>";
+    echo "<a href='ligas.php?filtro_liga=geral'>Geral</a>";
+    echo "<a href='ligas.php?filtro_liga=semanal'>Semanal</a>";
+    
+    echo "<table>";
+        echo "<thead>";
+            echo "<tr>";
+                echo "<th>Posição</th>";
+                echo "<th>Nickname</th>";
+                echo "<th>Pontos</th>";
+            echo "</tr>";
+        echo "</thead>";
+    
+        echo "<tbody>";
+            $posicao = 1;
+            while ($linha = mysqli_fetch_assoc($rank_exibir_ligas)) {
+                echo "<tr>";
+                echo "<td>" . $posicao++ . "</td>";
+                echo "<td>" . $linha['nickname'] . "</td>";
+                echo "<td>" . $linha['total_pontos'] . "</td>";
                 echo "</tr>";
             }   
         echo "</tbody>";
