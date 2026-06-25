@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgb(19, 182, 194);
+    overflow: hidden;
+    padding: 20px;
+}
+
+#menu_inicial {
+    background-color: white;
+    border-radius: 30px;
+    width: 700px;
+    max-width: 95%;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    height: 650px;
+}
+
+.tela_index {
+    width: 100%;
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo_index {
+    font-size: 70px;
+    color: rgb(42, 133, 156);
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.img_index {
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+#opcoes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.login_button {
+    text-decoration: none;
+    color: rgb(42, 133, 156);
+    background-color: rgb(220, 238, 253);
+    width: 230px;
+    height: 80px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    transition: 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.login_button:hover {
+    background-color: rgb(108, 224, 233);
+    color: white;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    #menu_inicial {
+        min-height: auto;
+        padding: 20px 0;
+    }
+
+    .tela_index {
+        padding: 30px 20px;
+    }
+
+    .titulo_index {
+        font-size: 48px;
+    }
+
+    .img_index {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .login_button {
+        width: 200px;
+        height: 70px;
+        font-size: 30px;
+    }
+}

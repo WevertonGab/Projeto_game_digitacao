@@ -1,6 +1,4 @@
 <?php
-
-/*Varifica sejá tem alguém conectado, caso tenha manda para dahsboard*/
 session_start();
 if (isset($_SESSION['usuario_id'])){
     header("Location: dashboard.php");
@@ -14,16 +12,21 @@ if (isset($_SESSION['usuario_id'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tela_inicial</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleindex.css">
 </head>
 <body>
     
-<h1 class="titulo_index" >MINING GAME</h1>
+    <section id="menu_inicial">
+        <div class="tela_index">
+            <h1 class="titulo_index">MINING GAME</h1>
+            <img src="imagens/capa.png" alt="Imagem do jogo" class="img_index">
 
-<div id="opcoes">
-    <a class="login_button" href="login.php">Entrar</a>
-    <a class="login_button" href="cadastro.php">Cadastrar</a>
-</div>
+            <div id="opcoes">
+                <a class="login_button" href="login.php">Entrar</a>
+                <a class="login_button" href="cadastro.php">Cadastrar</a>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>
