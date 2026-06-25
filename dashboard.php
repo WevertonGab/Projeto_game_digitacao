@@ -18,6 +18,7 @@ require_once __DIR__ . "/verifica_login.php";
     <a href="logout.php">Sair</a>
     <a href="jogo.php">Jogar</a>
     <a href="ligas.php">Ligas</a>
+    <a href="historico.php">Historico</a>
 </div>
 
 </body>
