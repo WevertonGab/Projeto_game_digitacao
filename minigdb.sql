@@ -13,7 +13,7 @@ id INT AUTO_INCREMENT PRIMARY KEY,
 usuario_id INT NOT NULL,
 pontos INT NOT NULL,
 wpm INT NOT NULL,
-precisao INT NOT NULL,
+precisao INT NOT NULL, 
 criado_em DATETIME NOT NULL,
 FOREIGN KEY (usuario_id) REFERENCES usuario(id));
 
@@ -65,4 +65,5 @@ SELECT l.nome, l.criado_em, u.nickname AS criador
 FROM ligas l
 JOIN usuario u ON u.id = l.criador_id
 WHERE l.id 
+
 

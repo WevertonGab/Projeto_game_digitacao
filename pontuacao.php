@@ -4,7 +4,7 @@ require_once __DIR__ . "/conexao.php";
 
 $partida = [];
 
-$sql_partida ="SELECT pontos, wpm, tempo
+$sql_partida = "SELECT pontos, wpm, precisao
     FROM partida
     WHERE usuario_id = ?
     ORDER BY criado_em DESC

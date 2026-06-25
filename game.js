@@ -211,7 +211,7 @@ function quebrabloco(){
                     .then(response => response.json())
                     .then(data => {
                         if (data.sucesso) {
-                            alert(`Mina concluída!\nPontos: ${resultado.pontos}\nWPM: ${resultado.wpm}\nPrecisão: ${resultado.precisao}%`);
+                            window.location.href = "pontuacao.php";
                         }
                     animando = false;
                     return;

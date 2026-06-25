@@ -17,6 +17,7 @@ require_once __DIR__ . "/verifica_login.php";
             <div id="bar"> 
                 <div id="tempo" class="icons"></div>
                 <button id="botao" class="icons" onclick="quebrabloco()">encerrar</button>
+                <a href="dashboard.php">voltar</a>
                 <div id="pontos" class="icons"></div>
             </div>
             <div id="game">
