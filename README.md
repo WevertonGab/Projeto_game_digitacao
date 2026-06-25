@@ -91,3 +91,33 @@ O jogador assume o papel de um minerador que quebra blocos digitando corretament
 ---
 
 ## Estrutura de Arquivos
+```
+/
+├── imagens/               # Sprites, blocos e imagens do jogo
+├── sons/                  # Efeitos sonoros do jogo
+├── index.php              # Tela inicial (login ou cadastro)
+├── login.php              # Autenticação do usuário
+├── cadastro.php           # Registro de novo usuário
+├── logout.php             # Encerramento de sessão
+├── dashboard.php          # Página principal após login
+├── jogo.php               # Interface do jogo
+├── game.js                # Lógica do jogo (JavaScript)
+├── pontuacao.php          # Tela de resultado da partida
+├── historico.php          # Histórico de partidas do usuário
+├── ligas.php              # Ranking global e sistema de ligas
+├── criar_liga.php         # Criação de nova liga
+├── entrar_liga.php        # Entrada em liga existente
+├── sair_liga.php          # Saída da liga atual
+├── salvar_partida.php     # Endpoint PHP que recebe dados do fetch e salva no banco
+├── verifica_login.php     # Middleware de proteção de páginas
+├── conexao.php            # Conexão com o banco de dados
+├── config.php             # Constantes de configuração do banco (não subir credenciais reais)
+├── minigdb.sql            # Script de criação do banco de dados
+├── style.css              # Estilos globais
+├── styleentrarliga.css    # Estilos da tela de entrar em liga
+├── stylegame.css          # Estilos específicos do jogo
+├── stylehistorico.css     # Estilos do histórico de partidas
+├── styleliga.css          # Estilos do sistema de ligas
+├── stylepontos.css        # Estilos da tela de pontuação
+└── AI_USAGE_LOG.md        # Registro de uso de IA no projeto
+```
