@@ -178,9 +178,18 @@ document.addEventListener("keydown", function(event) {
     
 } );
 
-function atualizatexto(){
-    bloco1.textContent=palavraat.substring(progresso);
-}
+    function atualizatexto(){
+    let blocoAtivo;
+    if (contador < 48) {
+        blocoAtivo = bloco1;
+    } else if (contador === 48) {
+        blocoAtivo = bloco2;
+    } else if (contador === 49) {
+        blocoAtivo = bloco3;
+    }
+    blocoAtivo.textContent = palavraat.substring(progresso);
+    }
+
 function quebrabloco(){
     if (contador < 50){
         if (animando) return;

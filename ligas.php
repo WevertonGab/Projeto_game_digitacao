@@ -107,6 +107,7 @@ $rank_exibir = ($filtro === 'semanal') ? $rank_semanal : $rank_global;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ligas</title>
+    <link rel="stylesheet" href="styleliga.css">
 </head>
 <body>
 
