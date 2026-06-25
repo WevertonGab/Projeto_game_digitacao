@@ -72,7 +72,9 @@ function calcularPontuacao() {
     const totalDigitado = totalLetras + erros;
     const precisao = Math.round((totalLetras / totalDigitado) * 100);
     const bonusProfundidade = contador * 10;
-    const pontos = Math.round(wpm * (precisao / 100) + bonusProfundidade);
+    const penalidadeErros = erros * 5; 
+    const pontos = Math.round(wpm * (precisao / 100) + bonusProfundidade - penalidadeErros);
+    if (pontos < 0) pontos = 0
     return { pontos, wpm, precisao };
 }
 function criarmina(){
