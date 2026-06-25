@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(197, 255, 182);
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+}
+
+body > div,
+body > section,
+body > main,
+form {
+    width: 100%;
+}
+
+#container-entrar {
+    background-color: white;
+    border: 2px solid #000;
+    border-left: 8px solid #34db58;
+    border-radius: 14px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 25px;
+    color: #222;
+    font-size: 28px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+input[type="password"] {
+    width: 100%;
+    max-width: 320px;
+    padding: 12px 14px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.2s;
+}
+
+input[type="password"]:focus {
+    border-color: #34db58;
+    box-shadow: 0 0 0 3px rgba(52, 219, 88, 0.2);
+}
+
+button {
+    border: none;
+    background-color: #34db58;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    min-width: 140px;
+}
+
+button:hover {
+    background-color: #29aa6e;
+    transform: scale(1.05);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    background-color: #34db58;
+    padding: 12px 18px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: 0.2s;
+    min-width: 140px;
+    text-align: center;
+}
+
+a:hover {
+    background-color: #29aa6e;
+    transform: scale(1.05);
+}
+
+
+.botoes {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+
+.erro {
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: #ffe5e5;
+    border: 1px solid #e63838;
+    color: #b30000;
+    font-weight: bold;
+}

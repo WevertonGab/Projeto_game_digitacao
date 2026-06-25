@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(197, 255, 182);
+    color: #222;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+#historico-box {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    border: 2px solid #000;
+    border-left: 8px solid #3453db;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #222;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    background-color: #34db58;
+    padding: 10px 16px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: 0.2s;
+}
+
+a:hover {
+    background-color: #29aa6e;
+    transform: scale(1.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #333;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #e8f4ff;
+}
+
+.sem-historico {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 18px;
+}

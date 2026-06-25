@@ -31,7 +31,7 @@ body > a {
     margin-bottom: 20px;
 }
 
-/* Seções principais */
+
 section {
     background-color: white;
     border: 2px solid #000000;
@@ -41,19 +41,18 @@ section {
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* Rank global */
+
 #rank_global {
     border-left: 8px solid #3453db;
     background-color: #eef7ff;
 }
 
-/* Liga privada */
+
 #liga_privada {
     border-left: 8px solid #e63838;
     background-color: #eefcf2;
 }
 
-/* Títulos */
 h2 {
     margin-bottom: 12px;
     color: #222;
@@ -65,14 +64,14 @@ h3 {
     color: #444;
 }
 
-/* Espaço entre botões */
+
 #rank_global a,
 #liga_privada a {
     margin-top: 10px;
     margin-bottom: 15px;
 }
 
-/* Tabelas */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -82,7 +81,7 @@ table {
     overflow: hidden;
 }
 
-/* Cabeçalho da tabela */
+
 thead {
     background-color: #333;
     color: white;
@@ -94,17 +93,16 @@ th, td {
     border: 1px solid #ddd;
 }
 
-/* Zebra nas linhas */
+
 tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
 tbody tr:hover {
     background-color: #e8f4ff;
-    transform: scale(1.5);
+    transform: scale(1.05);
 }
 
-/* Ajuste dos links dentro da área da liga */
 #liga_privada a,
 #rank_global a {
     margin-right: 10px;

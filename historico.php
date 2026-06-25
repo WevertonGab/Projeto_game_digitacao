@@ -20,6 +20,7 @@ $historico = mysqli_stmt_get_result($stmtm_historico);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>historico</title>
+    <link rel="stylesheet" href="stylehistorico.css">
 </head>
 <body>
     <h1>Seu Histórico de Partidas</h1>

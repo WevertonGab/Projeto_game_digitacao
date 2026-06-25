@@ -48,6 +48,7 @@ else {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>entrar liga</title>
+    <link rel="stylesheet" href="styleentrarliga.css">
 </head>
 <body>
     <h2>Entrar na Liga: <?php echo htmlspecialchars($liga['nome']); ?></h2>
