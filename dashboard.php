@@ -10,7 +10,7 @@ require_once __DIR__ . "/verifica_login.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styledashboard.css">
 </head>
 <body>
     

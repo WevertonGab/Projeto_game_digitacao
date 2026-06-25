@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgb(19, 182, 194);
+    padding: 20px;
+}
+
+.titulo_nick {
+    font-size: 55px;
+    color: white;
+    margin-bottom: 35px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+#opcoes {
+    background-color: white;
+    width: 750px;
+    max-width: 95%;
+    min-height: 350px;
+    border-radius: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 40px;
+}
+
+.btn_dashboard,
+.btn_logout {
+    text-decoration: none;
+    width: 230px;
+    height: 85px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    transition: 0.2s;
+}
+
+.btn_dashboard {
+    background-color: rgb(220, 238, 253);
+    color: rgb(42, 133, 156);
+}
+
+.btn_dashboard:hover {
+    background-color: rgb(108, 224, 233);
+    color: white;
+    transform: scale(1.05);
+}
+
+.btn_logout {
+    background-color: rgb(42, 133, 156);
+    color: white;
+}
+
+.btn_logout:hover {
+    background-color: rgb(108, 224, 233);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .titulo_nick {
+        font-size: 38px;
+    }
+
+    #opcoes {
+        width: 95%;
+        padding: 30px 20px;
+        gap: 18px;
+    }
+
+    .btn_dashboard,
+    .btn_logout {
+        width: 100%;
+        max-width: 280px;
+        height: 70px;
+        font-size: 28px;
+    }
+}
