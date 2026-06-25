@@ -1,5 +1,6 @@
 <?php
 
+/*Puxa conexão.php para pode acessar e manipular o BD*/
 require_once __DIR__ . "/conexao.php";
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
@@ -42,22 +43,25 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cadastro</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-    <h1>Tela de Cadastro</h1>
+    <h1 class="titulo_cadastro" >Tela de Cadastro</h1>
 
-    <div class="cadastro">
-        <form method="POST" action="cadastro.php"> 
-            <input type="text" name="nome" placeholder="Digite seu nome">
-            <input type="text" name="nickname" placeholder="Digite um apelido">
-            <input type="password" name="senha" placeholder="Crie uma senha">
-            <button type="submit">Cadastrar</button>
-            <a href="index.php">Voltar</a>
+    <div id="cadastro">
+        <form id="form_cadastro" method="POST" action="cadastro.php"> 
+            <input class="campo_form" type="text" name="nome" placeholder="Digite seu nome">
+            <input class="campo_form" type="text" name="nickname" placeholder="Digite um apelido">
+            <input class="campo_form" type="password" name="senha" placeholder="Crie uma senha">
+            <button class="cadastrar" type="submit">Cadastrar</button>
+            <a class="botao_voltar" href="index.php">Voltar</a>
         </form>    
     </div>
 
-    <?php if (isset($erro)) echo $erro; ?>
+    <?php if (isset($erro)): ?>
+    <p class="mensagem_erro"><?= $erro ?></p>
+    <?php endif; ?>
 
 </body>
 </html>

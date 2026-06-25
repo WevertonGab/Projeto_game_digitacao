@@ -49,21 +49,24 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-    <h1>Tela de Login</h1>
+    <h1 class="titulo_login">Tela de Login</h1>
 
-    <div class="cadastro">
-        <form method="POST" action="login.php"> 
-            <input type="text" name="nickname" placeholder="Digite seu apelido">
-            <input type="password" name="senha" placeholder="Digite sua senha">
-            <button type="submit">Entrar</button>
-            <a href="index.php">Voltar</a>
+    <div id="cadastro">
+        <form id="form_login" method="POST" action="login.php"> 
+            <input class="campo_form" type="text" name="nickname" placeholder="Digite seu apelido">
+            <input class="campo_form" type="password" name="senha" placeholder="Digite sua senha">
+            <button class="cadastrar" type="submit">Entrar</button>
+            <a class="botao_voltar" href="index.php">Voltar</a>
         </form>    
     </div>
 
-    <?php if (isset($erro)) echo $erro; ?>
+    <?php if (isset($erro)): ?>
+    <p class="mensagem_erro"><?= $erro ?></p>
+    <?php endif; ?>
 
 </body>
 </html>

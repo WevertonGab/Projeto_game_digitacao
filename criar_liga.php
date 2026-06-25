@@ -32,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             mysqli_stmt_execute($stmt_membro);
 
             header("Location: ligas.php");
+            exit();
         } catch (mysqli_sql_exception $e) {
             if ($e->getCode() === 1062) { 
                 $erro = "Nome da liga já existe. Por favor, escolha outro.";
@@ -49,18 +50,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Liga</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="criar_liga">
-        <h2>Criar Liga</h2>
-        <form method="POST" action="criar_liga.php" >
-            <input type="text" name="nome" placeholder="Digite o nome da liga">
-            <input type="password" name="senha" placeholder="Crie uma senha">
-            <button type="submit">Criar</button>
-            <a href="ligas.php">Voltar</a>
+    <h1 class="titulo_criar_liga">Criar Liga</h1>
+    <div id="cadastro">
+        
+        <form id="form_criar_liga" method="POST" action="criar_liga.php" >
+            <input class="campo_form" type="text" name="nome" placeholder="Digite o nome da liga">
+            <input class="campo_form" type="password" name="senha" placeholder="Crie uma senha">
+            <button class="cadastrar" type="submit">Criar</button>
+            <a class="botao_voltar" href="ligas.php">Voltar</a>
         </form>
     </div>
-    <?php if (isset($erro)) echo $erro; ?>
+    <?php if (isset($erro)): ?>
+    <p class="mensagem_erro"><?= $erro ?></p>
+    <?php endif; ?>
 </body>
 </html>
