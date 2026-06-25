@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    height: 100vh;
+    
+    display: flex;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    background-color: rgb(234, 255, 229);
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    justify-content: center;
+     overflow: hidden;
+}
+
+#tela3{
+    height: 700px;
+    width: 600px;
+    overflow: hidden;
+    justify-content: center;
+    padding-top: 30PX; 
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#telapontos{
+    background-color: white;
+    border-radius: 30px;
+    width: 600px;
+    height: 700px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+#txt{
+    background-color: rgb(165, 254, 187);
+    height: 10%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+#valor{
+    height: 20%;
+    width: 30%;
+    background-color: rgb(130, 175, 125);
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 70px;
+    margin-bottom: 30px;
+}
+#finalizar{
+    margin-top: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    height: 8%;
+}
+#denovo{
+    width: 30%;
+    height: 100%;
+    border: none;
+    background-color: rgb(132, 250, 167);
+    border-radius: 20px;
+    font-size: 25px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: pointer;
+}
+#relatorio{
+    background-color: aquamarine;
+    height: 50%;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+}
+.jv{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.tab{
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 30px;
+}
+#denovo:hover{
+    background-color: red;
+    color: white;
+
+}

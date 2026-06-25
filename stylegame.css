@@ -1,0 +1,142 @@
+body{
+    margin: 0;
+    height: 100vh;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+#telajogo{
+    margin: 0;
+    height: 100vh;
+    background-color: rgb(197, 255, 182);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+#hud{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border: 3px solid rgb(255, 255, 255);
+    width: 35vw;
+    height: 90vh;
+    justify-content: center;
+    overflow: hidden;
+}
+#game{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow: hidden    ;
+      transition: transform 0.4s;
+}
+#bar{
+    width: 100%;
+    height: 6%;
+    background-color: rgb(110, 239, 119);
+    color: rgb(0, 0, 0);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.fundo{
+    height: 728px;
+    width: 40%;
+    background-image: url('imagens/fundo.png'); 
+    background-size: 100% 5555px;  
+    background-repeat: no-repeat;
+    background-position-y: 0px;
+    transition: background-position-y 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    overflow: visible;
+}
+#jogo{
+    width: 20%;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: flex-end;
+   background: linear-gradient(
+    to bottom,
+    rgb(145, 211, 239),
+    rgb(162, 220, 247),
+    rgb(171, 225, 251)
+);
+    overflow: visible;
+    z-index: 2; 
+}
+.icons{
+    border-radius: 20px;
+    height: 65%;
+    border: 3px solid rgb(255, 255, 255);
+    width: 20%;
+    background-color: rgb(161, 255, 134);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.pedras{
+    width: 101px;
+    height: 101px;
+    background-image: url('imagens/bloco_terra.png');
+    background-size: cover;
+    border: 2px solid rgb(0, 0, 0);
+    border-bottom: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: larger;
+}
+
+#player{
+    width: 80px;
+    height: 202px;
+    background-color: transparent; 
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: visible; 
+}
+
+#player-sprite{
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+#areablocos{
+    width: 101px;
+    height: 303px;
+    background-color: rgb(153, 217, 234);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+
+@keyframes slide-up {
+    0%   { transform: translateY(101px); }
+    100% { transform: translateY(0); }
+}
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%       { transform: translateX(-5px); }
+    40%       { transform: translateX(5px); }
+    60%       { transform: translateX(-4px); }
+    80%       { transform: translateX(4px); }
+}
+@keyframes flash-break {
+    0%, 100% { filter: brightness(1); }
+    50%       { filter: brightness(2.5); }
+}
+.animating   { animation: slide-up 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+.player-shake{ animation: shake 0.3s ease; }
+.block-flash { animation: flash-break 0.15s ease 2; }
