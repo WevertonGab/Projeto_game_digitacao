@@ -15,6 +15,8 @@ let totalLetras = 0;
 const tempoTela = document.getElementById("tempo");
 let segundosCronometro = 0;
 let intervalTimer = null;
+const somquebra = new Audio("sons/quebrabloco2.mp3");
+const somerro = new Audio("sons/erro.mp3");
 const frames = [
     "imagens/sprite1.png",
     "imagens/sprite2.png",
@@ -170,6 +172,8 @@ document.addEventListener("keydown", function(event) {
         }
         else {
             erros++;
+            somerro.currentTime = 0;
+            somerro.play();
         }
     
 } );
@@ -182,6 +186,8 @@ function quebrabloco(){
         if (animando) return;
         animando = true;
         animarPlayer(() => {
+            somquebra.currentTime = 0;
+            somquebra.play();
             bloco1.classList.add("block-flash");
 
             setTimeout(() => {

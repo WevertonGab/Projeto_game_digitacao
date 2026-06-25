@@ -78,6 +78,7 @@ body{
     align-items: center;
     margin-left: 5%;
     margin-right: 5%;
+    text-decoration: solid;
 }
 .pedras{
     width: 101px;
