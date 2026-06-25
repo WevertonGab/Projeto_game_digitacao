@@ -60,5 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Criar</button>
             <a href="ligas.php">Voltar</a>
         </form>
+    </div>
+    <?php if (isset($erro)) echo $erro; ?>
 </body>
 </html>

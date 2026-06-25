@@ -19,7 +19,7 @@ FOREIGN KEY (usuario_id) REFERENCES usuario(id));
 
 CREATE TABLE ligas (
 id INT AUTO_INCREMENT PRIMARY KEY,
-nome VARCHAR(100) NOT NULL,
+nome VARCHAR(100) NOT NULL UNIQUE,
 senha VARCHAR(255),
 criador_id INT,
 criado_em DATETIME NOT NULL,
@@ -56,8 +56,13 @@ JOIN usuario u ON u.id = l.criador_id
 ORDER BY l.criado_em DESC;
 
 /*Verificação se o usuário já está em outra liga*/
-SELECT liga_id FROM liga_membro WHERE usuario_id = ?;
 
 SELECT * FROM usuario;
 SELECT * FROM partida;
 SELECT * FROM ligas;
+
+SELECT l.nome, l.criado_em, u.nickname AS criador
+FROM ligas l
+JOIN usuario u ON u.id = l.criador_id
+WHERE l.id 
+
