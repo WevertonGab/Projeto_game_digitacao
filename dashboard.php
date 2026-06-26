@@ -20,7 +20,7 @@ require_once __DIR__ . "/verifica_login.php";
     <a class="btn_dashboard" href="jogo.php">Jogar</a>
     <a class="btn_dashboard" href="ligas.php">Ligas</a>
     <a class="btn_dashboard" href="historico.php">Historico</a>
-    <a class="btn_logout" href="logout.php">Sair</a>
+    <a  id="sss" class="btn_logout" href="logout.php">Sair</a>
 </div>
 
 </body>
