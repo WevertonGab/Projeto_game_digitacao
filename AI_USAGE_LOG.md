@@ -212,3 +212,4 @@ Interação 12
 - Referência no Código: Arquivo `config.php` e ambiente local do projeto.
 
 ---
+Extra as imagens e animações foram todas criadas por IA
